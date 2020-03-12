@@ -2,6 +2,9 @@ FROM ubuntu:18.04
 
 MAINTAINER quyenluu
 
+RUN apt-get update && \
+    apt-get -y upgrade
+
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
